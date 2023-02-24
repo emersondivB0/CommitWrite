@@ -1,0 +1,41 @@
+{
+  "name": "auto-commit",
+  "displayName": "Auto Commit",
+  "description": "Automatically commits changes to Git.",
+  "version": "1.0.0",
+  "publisher": "tu_editor_de_texto",
+  "engines": {
+    "vscode": "^1.51.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:autoCommit"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.autoCommit",
+        "title": "Auto Commit"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Auto Commit",
+      "properties": {
+        "git.path": {
+          "type": "string",
+          "default": "/usr/bin/git",
+          "description": "The path to your Git executable."
+        },
+        "autoCommit.message": {
+          "type": "string",
+          "default": "Auto commit",
+          "description": "The commit message to use when automatically committing changes."
+        }
+      }
+    }
+  }
+}
